@@ -24,6 +24,8 @@
 
 namespace mod_game\privacy;
 
+use core_privacy\local\request\approved_userlist;
+use core_privacy\local\request\userlist;
 use \core_privacy\local\request\writer;
 use \core_privacy\local\request\transform;
 use \core_privacy\local\request\contextlist;
@@ -46,7 +48,7 @@ require_once($CFG->dirroot . '/mod/game/locallib.php');
 class provider implements
     // This plugin has data.
     \core_privacy\local\metadata\provider,
-
+    \core_privacy\local\request\core_userlist_provider,
     // This plugin currently implements the original plugin_provider interface.
     \core_privacy\local\request\plugin\provider {
 
@@ -561,5 +563,15 @@ class provider implements
         $data->sudoku_data = $sudoku->data;
         $data->sudoku_opened = $sudoku->opened;
         $data->sudoku_guess = $sudoku->guess;
+    }
+
+    public static function get_users_in_context(userlist $userlist)
+    {
+        // TODO: Implement get_users_in_context() method.
+    }
+
+    public static function delete_data_for_users(approved_userlist $userlist)
+    {
+        // TODO: Implement delete_data_for_users() method.
     }
 }
