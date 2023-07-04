@@ -1230,7 +1230,7 @@ if (defined( 'GAME_MOODLE_401')) {
          \stdClass $user, \stdClass $course, &$types, $kind) {
         global $OUTPUT, $CFG, $DB;
 
-        $name = 'hide'.$type;
+        $name = 'hide'.$kind;
         $hide = ( isset( $config->$name) ? ($config->$name != 0) : false);
         if ($hide) {
             return;
